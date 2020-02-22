@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Connect4_AI</string>
+    <string name="x_wins">X wins!</string>
+    <string name="o_wins">O wins!</string>
+    <string name="tie_text">TIE!</string>
 </resources>

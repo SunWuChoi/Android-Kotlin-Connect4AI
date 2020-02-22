@@ -1,18 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <GridLayout
+        android:id="@+id/boardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="20dp"
+        android:columnCount="3"
+        android:rowCount="3">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/c00"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c01"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c02"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c10"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c11"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c12"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c20"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c21"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+
+        <TextView
+            android:id="@+id/c22"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="5dp"
+            android:background="@color/lightGrey"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="28sp"
+            tools:text="X" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/currentPlayerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textSize="48sp"
+        tools:text="X" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Reset"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/winnerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="26sp"
+        android:visibility="invisible"
+        tools:text="Winner" />
+
+</LinearLayout>
