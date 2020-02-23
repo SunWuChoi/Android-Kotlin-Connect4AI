@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">Connect4_AI</string>
-    <string name="x_wins">X wins!</string>
-    <string name="o_wins">O wins!</string>
+    <string name="x_wins">Red wins!</string>
+    <string name="o_wins">Yellow wins!</string>
     <string name="tie_text">TIE!</string>
     <string name="reset">Reset</string>
+    <string name="col_1">1</string>
+    <string name="col_2">2</string>
+    <string name="col_3">3</string>
+    <string name="col_4">4</string>
+    <string name="col_5">5</string>
+    <string name="col_6">6</string>
+    <string name="col_7">7</string>
 </resources>

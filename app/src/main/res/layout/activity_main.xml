@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:background="#203EBB"
         android:columnCount="7"
         android:rowCount="7">
 
@@ -21,21 +22,22 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
+
 
         <TextView
             android:id="@+id/c01"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -43,10 +45,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -54,10 +56,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -65,10 +67,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -76,10 +78,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -87,10 +89,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -98,10 +100,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -109,10 +111,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -120,10 +122,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -131,10 +133,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -142,10 +144,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -153,10 +155,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -164,10 +166,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -175,10 +177,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -186,10 +188,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -197,10 +199,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -208,10 +210,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -219,10 +221,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -230,10 +232,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -241,10 +243,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -252,10 +254,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -263,10 +265,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -274,10 +276,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -285,10 +287,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -296,10 +298,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -307,10 +309,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -318,10 +320,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -329,10 +331,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -340,10 +342,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -351,10 +353,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -362,10 +364,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -373,10 +375,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -384,10 +386,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -395,10 +397,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -406,10 +408,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -417,10 +419,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -428,10 +430,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -439,10 +441,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -450,10 +452,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -461,10 +463,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
         <TextView
@@ -472,10 +474,10 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
-            android:background="@color/lightGrey"
+            android:background="@drawable/circle"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:textSize="28sp"
+            android:textSize="36sp"
             tools:text="X" />
 
     </GridLayout>
@@ -494,7 +496,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textSize="26sp"
+        android:textSize="36sp"
         android:visibility="invisible"
         tools:text="Winner" />
 
@@ -506,5 +508,10 @@
         android:layout_marginBottom="20dp"
         android:text="@string/reset"
         android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/debugging_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

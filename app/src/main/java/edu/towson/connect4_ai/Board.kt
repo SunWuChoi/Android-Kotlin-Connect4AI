@@ -37,12 +37,14 @@ class Board : IBoard {
 
     private fun hasWinner(): Boolean {
         var count = 0
-        var height = 5
-        var width = 6
+        var height = 5 //y
+        var width = 6 //x
+
         //vertical win check
-        for(y in 0 .. 6){
-            for(x in 0 .. 5){
-                if(grid[x][y] == currentPlayer){
+        for(x in 0 .. 6){
+            count = 0
+            for(y in 0 .. 5){
+                if(grid[y][x] == currentPlayer){
                     count++
 
                     if(count >= 4){
@@ -55,10 +57,10 @@ class Board : IBoard {
         }
 
         //horizontal win check
-        count = 0
-        for(x in 0 .. 5){
-            for(y in 0 .. 6){
-                if(grid[x][y] == currentPlayer){
+        for(y in 0 .. 5){
+            count = 0
+            for(x in 0 .. 6){
+                if(grid[y][x] == currentPlayer){
                     count++
 
                     if(count >= 4){
@@ -69,91 +71,108 @@ class Board : IBoard {
                 }
             }
         }
-/*
+
         //diagonal top right to bottom left upper quarter
-        count = 0
-        for(y in 3..5){
-            var newx = 0
-            var newy = y
-            while(newy >= 0) {
-                if (grid[newx][newy] == currentPlayer) {
+        for(x in 3..5){
+            count = 0
+            var newx = x
+            var newy = 0
+            while(newx >= 0) {
+                if (grid[newy][newx] == currentPlayer) {
                     count++
                     if (count >= 4) {
                         return true
                     }
-                    newx++
-                    newy--
-
                 } else {
                     count = 0
                 }
+                newx--
+                newy++
             }
         }
+
 
         //diagonal top right to bottom left lower quarter
-        count = 0
-        for(y in 1..3){
-            var newy = y
-            var newx = height
-            while(newy <= 6) {
-                if (grid[newx][newy] == currentPlayer) {
+        for(x in 1..3){
+            count = 0
+            var newy = height
+            var newx = x
+            while(newx <= 6) {
+                if (grid[newy][newx] == currentPlayer) {
                     count++
                     if (count >= 4) {
                         return true
                     }
-                    newx--
-                    newy++
-
                 } else {
                     count = 0
                 }
+                newx++
+                newy--
             }
         }
+
 
         //diagonal top left to bottom right upper quarter
-        count = 0
-        for(y in 1..3){
-            var newy = y
-            var newx = 0
-            while(newy <= 6) {
-                if (grid[newx][newy] == currentPlayer) {
+        for(x in 1..3){
+            count = 0
+            var newy = 0
+            var newx = x
+            while(newx <= 6) {
+                if (grid[newy][newx] == currentPlayer) {
                     count++
                     if (count >= 4) {
                         return true
                     }
-                    newx++
-                    newy++
-
                 } else {
                     count = 0
                 }
+                newx++
+                newy++
             }
         }
+
 
         //diagonal top left to bottom right lower quarter
-        count = 0
-        for(y in 3..5){
-            var newy = y
-            var newx = 5
-            while(newy >= 0) {
-                if (grid[newx][newy] == currentPlayer) {
+        for(x in 3..5){
+            count = 0
+            var newy = height
+            var newx = x
+            while(newx >= 0) {
+                if (grid[newy][newx] == currentPlayer) {
                     count++
                     if (count >= 4) {
                         return true
                     }
-                    newx--
-                    newy--
-
                 } else {
                     count = 0
                 }
+                newx--
+                newy--
             }
         }
-*/
+
         return false
     }
 
+    fun fromTop(col: Int): Boolean{
+        var emptyPos = -1
+        var x = col-1
+
+        if(grid[0][x] != Player.EMPTY){
+            return false
+        }
+
+        for (y in 0..5) {
+            if(grid[y][x] == Player.EMPTY){
+                emptyPos++
+            }
+        }
+        return setLocation(emptyPos,x)
+    }
+
     override fun setLocation(x: Int, y: Int): Boolean {
+        //System.out.println(x)
+        //System.out.println(y)
         if(winner != Player.EMPTY) return false
         if(x in 0..5) {
             if(y in 0..6) {
