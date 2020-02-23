@@ -31,12 +31,51 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, IController {
             c00 -> board.setLocation(0,0)
             c01 -> board.setLocation(0,1)
             c02 -> board.setLocation(0,2)
+            c03 -> board.setLocation(0,3)
+            c04 -> board.setLocation(0,4)
+            c05 -> board.setLocation(0,5)
+            c06 -> board.setLocation(0,6)
+
             c10 -> board.setLocation(1,0)
             c11 -> board.setLocation(1,1)
             c12 -> board.setLocation(1,2)
+            c13 -> board.setLocation(1,3)
+            c14 -> board.setLocation(1,4)
+            c15 -> board.setLocation(1,5)
+            c16 -> board.setLocation(1,6)
+
             c20 -> board.setLocation(2,0)
             c21 -> board.setLocation(2,1)
             c22 -> board.setLocation(2,2)
+            c23 -> board.setLocation(2,3)
+            c24 -> board.setLocation(2,4)
+            c25 -> board.setLocation(2,5)
+            c26 -> board.setLocation(2,6)
+
+            c30 -> board.setLocation(3,0)
+            c31 -> board.setLocation(3,1)
+            c32 -> board.setLocation(3,2)
+            c33 -> board.setLocation(3,3)
+            c34 -> board.setLocation(3,4)
+            c35 -> board.setLocation(3,5)
+            c36 -> board.setLocation(3,6)
+
+            c40 -> board.setLocation(4,0)
+            c41 -> board.setLocation(4,1)
+            c42 -> board.setLocation(4,2)
+            c43 -> board.setLocation(4,3)
+            c44 -> board.setLocation(4,4)
+            c45 -> board.setLocation(4,5)
+            c46 -> board.setLocation(4,6)
+
+            c50 -> board.setLocation(5,0)
+            c51 -> board.setLocation(5,1)
+            c52 -> board.setLocation(5,2)
+            c53 -> board.setLocation(5,3)
+            c54 -> board.setLocation(5,4)
+            c55 -> board.setLocation(5,5)
+            c56 -> board.setLocation(5,6)
+
             resetBtn -> {
                 // if the reset button was clicked, reset the board and view
                 board.reset()
@@ -120,7 +159,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, IController {
     override fun updateCell(rowNum: Int, colNum: Int, cell: Board.Player) {
         val cnt = boardView.childCount
         (0..cnt).forEach {
-            val rowCol = colNum + 3 * rowNum
+            val rowCol = colNum + 7 * rowNum
             if(rowCol == it) {
                 val tv = boardView.getChildAt(it) as TextView?
                 when (cell) {

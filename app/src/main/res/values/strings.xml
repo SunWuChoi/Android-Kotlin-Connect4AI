@@ -3,4 +3,5 @@
     <string name="x_wins">X wins!</string>
     <string name="o_wins">O wins!</string>
     <string name="tie_text">TIE!</string>
+    <string name="reset">Reset</string>
 </resources>

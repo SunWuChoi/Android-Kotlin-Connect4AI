@@ -36,38 +36,127 @@ class Board : IBoard {
     }
 
     private fun hasWinner(): Boolean {
-        return (0..2).any { columnWinner(it) }
-                || (0..2).any { rowWinner(it) }
-                || leftDiagWinner()
-                || rightDiagWinner()
-    }
+        var count = 0
+        var height = 5
+        var width = 6
+        //vertical win check
+        for(y in 0 .. 6){
+            for(x in 0 .. 5){
+                if(grid[x][y] == currentPlayer){
+                    count++
 
-    private fun columnWinner(col: Int): Boolean {
-        return grid.all { it[col] == currentPlayer }
-    }
-
-    private fun rowWinner(row: Int): Boolean {
-        return grid[row].all { it == currentPlayer }
-    }
-
-    private fun leftDiagWinner(): Boolean {
-        var col = 0
-        return grid.all {
-            it[col++] == currentPlayer
+                    if(count >= 4){
+                        return true
+                    }
+                }else{
+                    count = 0
+                }
+            }
         }
-    }
 
-    private fun rightDiagWinner(): Boolean {
-        var col = 2
-        return grid.all {
-            it[col--] == currentPlayer
+        //horizontal win check
+        count = 0
+        for(x in 0 .. 5){
+            for(y in 0 .. 6){
+                if(grid[x][y] == currentPlayer){
+                    count++
+
+                    if(count >= 4){
+                        return true
+                    }
+                }else{
+                    count = 0
+                }
+            }
         }
+/*
+        //diagonal top right to bottom left upper quarter
+        count = 0
+        for(y in 3..5){
+            var newx = 0
+            var newy = y
+            while(newy >= 0) {
+                if (grid[newx][newy] == currentPlayer) {
+                    count++
+                    if (count >= 4) {
+                        return true
+                    }
+                    newx++
+                    newy--
+
+                } else {
+                    count = 0
+                }
+            }
+        }
+
+        //diagonal top right to bottom left lower quarter
+        count = 0
+        for(y in 1..3){
+            var newy = y
+            var newx = height
+            while(newy <= 6) {
+                if (grid[newx][newy] == currentPlayer) {
+                    count++
+                    if (count >= 4) {
+                        return true
+                    }
+                    newx--
+                    newy++
+
+                } else {
+                    count = 0
+                }
+            }
+        }
+
+        //diagonal top left to bottom right upper quarter
+        count = 0
+        for(y in 1..3){
+            var newy = y
+            var newx = 0
+            while(newy <= 6) {
+                if (grid[newx][newy] == currentPlayer) {
+                    count++
+                    if (count >= 4) {
+                        return true
+                    }
+                    newx++
+                    newy++
+
+                } else {
+                    count = 0
+                }
+            }
+        }
+
+        //diagonal top left to bottom right lower quarter
+        count = 0
+        for(y in 3..5){
+            var newy = y
+            var newx = 5
+            while(newy >= 0) {
+                if (grid[newx][newy] == currentPlayer) {
+                    count++
+                    if (count >= 4) {
+                        return true
+                    }
+                    newx--
+                    newy--
+
+                } else {
+                    count = 0
+                }
+            }
+        }
+*/
+        return false
     }
 
     override fun setLocation(x: Int, y: Int): Boolean {
         if(winner != Player.EMPTY) return false
-        if(x < 3 && x >= 0) {
-            if(y < 3 && y >=0) {
+        if(x in 0..5) {
+            if(y in 0..6) {
                 if(grid[x][y] != Player.EMPTY) {
                     return false
                 }
@@ -95,8 +184,8 @@ class Board : IBoard {
     }
 
     override fun reset() {
-        grid = (1..3).map {
-            (1..3).map { Player.EMPTY }.toMutableList()
+        grid = (0..5).map {
+            (0..6).map { Player.EMPTY }.toMutableList()
         }
         winner = Player.EMPTY
         currentPlayer = Player.X
