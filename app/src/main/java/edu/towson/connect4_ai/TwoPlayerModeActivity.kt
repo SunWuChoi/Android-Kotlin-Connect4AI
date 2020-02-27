@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.core.text.toSpannable
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener, IController {
+class TwoPlayerModeActivity : AppCompatActivity(), View.OnClickListener, IController {
 
     // a reference to our model
     lateinit var board: Board
@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, IController {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         setupGridLayout()
 
         // our model

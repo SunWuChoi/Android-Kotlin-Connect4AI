@@ -11,4 +11,9 @@
     <string name="col_5">5</string>
     <string name="col_6">6</string>
     <string name="col_7">7</string>
+    <string name="connect_four_ai">Connect Four AI</string>
+    <string name="two_player_mode">2 Player mode</string>
+    <string name="one_player_mode">Vs AI mode</string>
+    <string name="online_mode">Online mode</string>
+    <string name="created_by">Created by :</string>
 </resources>
