@@ -11,11 +11,16 @@ class MainMenuActivity : AppCompatActivity() {
         setContentView(R.layout.menu_activity)
 
         twoPlayerMode_btn.setOnClickListener{ launchTwoPlayerMode() }
-
+        onePlayerMode_btn.setOnClickListener{ launchVsSilvaMode() }
     }
 
     fun launchTwoPlayerMode(){
         val intent = Intent(this, TwoPlayerModeActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun launchVsSilvaMode(){
+        val intent = Intent(this, VsSilvaActivity::class.java)
         startActivity(intent)
     }
 

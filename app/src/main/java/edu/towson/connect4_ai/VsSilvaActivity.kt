@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.core.text.toSpannable
 import kotlinx.android.synthetic.main.activity_main.*
 
-class TwoPlayerModeActivity : AppCompatActivity(), View.OnClickListener, IController {
+class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
     // a reference to our model
     lateinit var board: Board
@@ -158,7 +158,30 @@ class TwoPlayerModeActivity : AppCompatActivity(), View.OnClickListener, IContro
             "X" -> "Red's turn"
             else -> "Yellow's turn"
         }
+
+        when(board.getCurrentPlayer().name){
+            "O" -> silvaMove()
+
+        }
+
+
     }
+
+    fun silvaMove(){
+        var Silvaplaced = false
+        for(i in 1..7){
+            Silvaplaced = board.fromTop(i)
+            if(Silvaplaced) break
+        }
+        if(Silvaplaced) {
+            // check for a win and update the view accordingly
+            handleWin()
+            updateViewWithBoard()
+        } else {
+            updateViewWithBoard()
+        }
+    }
+
 
     /**
      * Updates the cell at rowNum,colNum with the given player

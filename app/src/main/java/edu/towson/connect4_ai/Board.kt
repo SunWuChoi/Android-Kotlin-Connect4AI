@@ -213,12 +213,3 @@ class Board : IBoard {
     enum class Player { X, O, EMPTY }
     enum class Winner { X, O, TIE, NONE }
 }
-
-interface IBoard {
-    fun getWinner(): Board.Winner
-    fun setLocation(x: Int, y: Int): Boolean
-    fun updateCurrentPlayer()
-    fun getCurrentPlayer(): Board.Player
-    fun getBoard(): List<List<Board.Player>>
-    fun reset()
-}
