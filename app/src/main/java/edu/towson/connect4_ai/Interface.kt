@@ -1,7 +1,7 @@
 package edu.towson.connect4_ai
 
 interface IController {
-    fun updateCell(rowNum: Int, colNum: Int, cell: Board.Player)
+    fun updateCell(rowNum: Int, colNum: Int, cell: Player)
     fun updateViewWithBoard()
     fun updateWinView()
     fun handleWin()
@@ -9,10 +9,10 @@ interface IController {
 }
 
 interface IBoard {
-    fun getWinner(): Board.Winner
+    fun getWinner(): Winner
     fun setLocation(x: Int, y: Int): Boolean
     fun updateCurrentPlayer()
-    fun getCurrentPlayer(): Board.Player
-    fun getBoard(): List<List<Board.Player>>
+    fun getCurrentPlayer(): Player
+    fun getBoard(): List<List<Player>>
     fun reset()
 }

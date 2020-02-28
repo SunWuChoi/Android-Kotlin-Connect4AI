@@ -3,7 +3,7 @@ package edu.towson.connect4_ai
 
 class Board : IBoard {
 
-    private var currentPlayer = Player.X
+    private var currentPlayer = Player.RED
     private var winner = Player.EMPTY
     lateinit var grid: List<MutableList<Player>>
 
@@ -17,8 +17,8 @@ class Board : IBoard {
             false -> Player.EMPTY
         }
         return when(winner) {
-            Player.X -> Winner.X
-            Player.O -> Winner.O
+            Player.RED -> Winner.RED
+            Player.YELLOW -> Winner.YELLOW
             Player.EMPTY -> {
                 if(boardFull()) {
                     Winner.TIE
@@ -189,8 +189,8 @@ class Board : IBoard {
     override fun updateCurrentPlayer() {
         currentPlayer = when(currentPlayer) {
             Player.EMPTY -> throw Exception("Why is current player EMPTY?")
-            Player.X -> Player.O
-            Player.O -> Player.X
+            Player.RED -> Player.YELLOW
+            Player.YELLOW -> Player.RED
         }
     }
 
@@ -207,9 +207,6 @@ class Board : IBoard {
             (0..6).map { Player.EMPTY }.toMutableList()
         }
         winner = Player.EMPTY
-        currentPlayer = Player.X
+        currentPlayer = Player.RED
     }
-
-    enum class Player { X, O, EMPTY }
-    enum class Winner { X, O, TIE, NONE }
 }

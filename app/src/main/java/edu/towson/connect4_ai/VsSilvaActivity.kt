@@ -106,19 +106,19 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
     override fun handleWin() {
         when(board.getWinner()) {
-            Board.Winner.X -> {
+            Winner.RED -> {
                 winnerTextView.text = getString(R.string.x_wins)
                 updateWinView()
             }
-            Board.Winner.O -> {
+            Winner.YELLOW -> {
                 winnerTextView.text = getString(R.string.o_wins)
                 updateWinView()
             }
-            Board.Winner.NONE -> {
+            Winner.NONE -> {
                 // if no one has won, update the current player
                 board.updateCurrentPlayer()
             }
-            Board.Winner.TIE -> {
+            Winner.TIE -> {
                 winnerTextView.text = getString(R.string.tie_text)
                 updateWinView()
             }
@@ -155,7 +155,7 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
                 }
             }
         currentPlayerTextView.text = when(board.getCurrentPlayer().name){
-            "X" -> "Red's turn"
+            "RED" -> "Red's turn"
             else -> "Yellow's turn"
         }
 
@@ -186,7 +186,7 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
     /**
      * Updates the cell at rowNum,colNum with the given player
      */
-    override fun updateCell(rowNum: Int, colNum: Int, cell: Board.Player) {
+    override fun updateCell(rowNum: Int, colNum: Int, cell: Player) {
         val cnt = boardView.childCount
 
         (0..cnt).forEach {
@@ -194,13 +194,13 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
             if(rowCol == it) {
                 val tv = boardView.getChildAt(it) as TextView?
                 when (cell) {
-                    Board.Player.X -> {
+                    Player.RED -> {
                         tv?.setBackgroundResource(R.drawable.red_circle)
                     }
-                    Board.Player.O -> {
+                    Player.YELLOW -> {
                         tv?.setBackgroundResource(R.drawable.yellow_circle)
                     }
-                    Board.Player.EMPTY -> tv?.setBackgroundResource(R.drawable.circle)
+                    Player.EMPTY -> tv?.setBackgroundResource(R.drawable.circle)
                 }
             }
         }
