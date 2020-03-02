@@ -1,7 +1,7 @@
 package edu.towson.connect4_ai
 
 //https://medium.com/@andresmariscal/unbeatable-tic-tac-toe-an-android-app-using-kotlin-4f4d2576e6fd
-
+/*
 fun minimax(depth: Int, player: Player, grid: List<MutableList<Player>>): Array<Int> {
     val nextMoves: MutableList<Array<Int>> = generateMoves()
 
@@ -47,3 +47,5 @@ fun generateMoves(): MutableList<Array<Int>> {
 fun evaluate() : Int{
 
 }
+
+ */
