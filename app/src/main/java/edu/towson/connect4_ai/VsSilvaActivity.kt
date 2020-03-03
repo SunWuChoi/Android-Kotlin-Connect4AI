@@ -93,6 +93,7 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
             // check for a win and update the view accordingly
             handleWin()
             updateViewWithBoard()
+            silvaMove()
         } else {
             updateViewWithBoard()
         }
@@ -158,17 +159,12 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
             "RED" -> "Red's turn"
             else -> "Yellow's turn"
         }
-
-        when(board.getCurrentPlayer().name){
-            "O" -> silvaMove()
-
-        }
-
-
     }
 
     fun silvaMove(){
         var Silvaplaced = false
+
+
         for(i in 1..7){
             Silvaplaced = board.fromTop(i)
             if(Silvaplaced) break
