@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.core.text.toSpannable
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlin.concurrent.thread
 
 class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
@@ -25,6 +26,10 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
         // initialize the view with the model
         updateViewWithBoard()
+
+
+
+
     }
 
     override fun onClick(v: View?) {
@@ -93,9 +98,23 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
             // check for a win and update the view accordingly
             handleWin()
             updateViewWithBoard()
-            silvaMove()
         } else {
             updateViewWithBoard()
+        }
+    }
+
+    fun game() {
+        var success = false
+
+        c00.setOnClickListener{
+            board.fromTop(1)
+            success = true
+        }
+
+
+        if ( success ) {
+            silvaMove()
+            success = false
         }
     }
 
@@ -163,8 +182,6 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
     fun silvaMove(){
         var Silvaplaced = false
-
-
         for(i in 1..7){
             Silvaplaced = board.fromTop(i)
             if(Silvaplaced) break
