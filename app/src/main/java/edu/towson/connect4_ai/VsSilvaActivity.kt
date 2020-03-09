@@ -98,6 +98,7 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
             // check for a win and update the view accordingly
             handleWin()
             updateViewWithBoard()
+            silvaMove()
         } else {
             updateViewWithBoard()
         }
