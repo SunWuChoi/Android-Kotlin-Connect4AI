@@ -13,6 +13,9 @@ interface IBoard {
     fun setLocation(x: Int, y: Int): Boolean
     fun updateCurrentPlayer()
     fun getCurrentPlayer(): Player
+    fun setCurrentPlayer(player: Player)
     fun getBoard(): List<List<Player>>
     fun reset()
+    fun resetYellow()
+    fun copy(): Board
 }
