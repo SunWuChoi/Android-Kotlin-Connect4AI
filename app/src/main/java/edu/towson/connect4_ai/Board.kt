@@ -6,6 +6,7 @@ class Board : IBoard {
     private var currentPlayer = Player.RED
     private var winner = Player.EMPTY
     lateinit var grid: List<MutableList<Player>>
+    var value: Int = 0
 
     init {
         reset()
@@ -170,10 +171,18 @@ class Board : IBoard {
         return setLocation(emptyPos,x)
     }
 
+    fun fromTopAvailable(col: Int): Boolean{
+        var x = col -1
+        // returns if the top of column x is empty, meaning it is possible to play a move at that column
+
+        return grid[0][x] == Player.EMPTY
+    }
+
     override fun setLocation(x: Int, y: Int): Boolean {
         //System.out.println(x)
         //System.out.println(y)
         if(winner != Player.EMPTY) return false
+
         if(x in 0..5) {
             if(y in 0..6) {
                 if(grid[x][y] != Player.EMPTY) {
@@ -194,12 +203,16 @@ class Board : IBoard {
         }
     }
 
-    override fun getBoard(): List<List<Player>> {
+    override fun getBoard(): List<MutableList<Player>> {
         return grid
     }
 
     override fun getCurrentPlayer(): Player {
         return currentPlayer
+    }
+
+    override fun setCurrentPlayer(player: Player) {
+        currentPlayer = player
     }
 
     override fun reset() {
@@ -208,5 +221,35 @@ class Board : IBoard {
         }
         winner = Player.EMPTY
         currentPlayer = Player.RED
+    }
+
+    override fun resetYellow() {
+        grid = (0..5).map {
+            (0..6).map { Player.EMPTY }.toMutableList()
+        }
+        winner = Player.EMPTY
+        currentPlayer = Player.YELLOW
+    }
+
+    fun copyGrid(): List<MutableList<Player>>{
+        var copy : List<MutableList<Player>>
+        copy = (0..5).map {
+            (0..6).map { Player.EMPTY }.toMutableList()
+        }
+        for(x in 0..5){
+            for(y in 0..6){
+                copy[x][y] = this.grid[x][y]
+            }
+        }
+        return copy
+    }
+
+    override fun copy(): Board{
+        val copyboard = Board()
+        copyboard.grid = this.copyGrid()
+        copyboard.value = this.value
+        copyboard.currentPlayer = this.currentPlayer
+        copyboard.winner = this.winner
+        return copyboard
     }
 }

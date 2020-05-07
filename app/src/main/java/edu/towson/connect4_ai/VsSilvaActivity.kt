@@ -26,10 +26,6 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
         // initialize the view with the model
         updateViewWithBoard()
-
-
-
-
     }
 
     override fun onClick(v: View?) {
@@ -104,21 +100,6 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
         }
     }
 
-    fun game() {
-        var success = false
-
-        c00.setOnClickListener{
-            board.fromTop(1)
-            success = true
-        }
-
-
-        if ( success ) {
-            silvaMove()
-            success = false
-        }
-    }
-
     override fun resetView() {
         currentPlayerTextView.visibility = View.VISIBLE
         resetBtn.visibility = View.GONE
@@ -183,17 +164,19 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
     fun silvaMove(){
         var Silvaplaced = false
-        for(i in 1..7){
-            Silvaplaced = board.fromTop(i)
-            if(Silvaplaced) break
-        }
-        if(Silvaplaced) {
-            // check for a win and update the view accordingly
-            handleWin()
-            updateViewWithBoard()
-        } else {
-            updateViewWithBoard()
-        }
+                // move generator
+        val copyBoard = board.copy()
+        // copy board is in yellow player state
+
+        //var i = getMove(copyBoard, minimax(1, copyBoard))
+        //Silvaplaced = board.fromTop(i)
+
+
+        board.grid = minimax(4, copyBoard).copyGrid()
+        //board.updateCurrentPlayer()
+
+        handleWin()
+        updateViewWithBoard()
     }
 
 

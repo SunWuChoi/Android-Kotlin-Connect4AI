@@ -13,6 +13,13 @@ interface IBoard {
     fun setLocation(x: Int, y: Int): Boolean
     fun updateCurrentPlayer()
     fun getCurrentPlayer(): Player
+    fun setCurrentPlayer(player: Player)
     fun getBoard(): List<List<Player>>
     fun reset()
+<<<<<<< HEAD
 }
+=======
+    fun resetYellow()
+    fun copy(): Board
+}
+>>>>>>> origin/login-feature
