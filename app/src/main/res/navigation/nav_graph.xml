@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/loginActivityFragment"
+        android:name="edu.towson.connect4_ai.fragments.LoginActivityFragment"
+        android:label="LoginActivityFragment" >
+        <action
+            android:id="@+id/action_loginActivityFragment_to_registrationActivityFragment"
+            app:destination="@id/registrationActivityFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationActivityFragment"
+        android:name="edu.towson.connect4_ai.fragments.RegistrationActivityFragment"
+        android:label="RegistrationActivityFragment" >
+        <action
+            android:id="@+id/action_registrationActivityFragment_to_loginActivityFragment"
+            app:destination="@id/loginActivityFragment" />
+    </fragment>
+</navigation>

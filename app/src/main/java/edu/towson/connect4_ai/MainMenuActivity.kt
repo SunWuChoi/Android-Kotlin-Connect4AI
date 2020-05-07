@@ -3,6 +3,7 @@ package edu.towson.connect4_ai
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import edu.towson.connect4_ai.fragments.LoginActivityFragment
 import kotlinx.android.synthetic.main.menu_activity.*
 
 class MainMenuActivity : AppCompatActivity() {
@@ -12,6 +13,7 @@ class MainMenuActivity : AppCompatActivity() {
 
         twoPlayerMode_btn.setOnClickListener{ launchTwoPlayerMode() }
         onePlayerMode_btn.setOnClickListener{ launchVsSilvaMode() }
+        onlineMode_btn.setOnClickListener { launchAccountMode() }
     }
 
     fun launchTwoPlayerMode(){
@@ -21,6 +23,11 @@ class MainMenuActivity : AppCompatActivity() {
 
     fun launchVsSilvaMode(){
         val intent = Intent(this, VsSilvaActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun launchAccountMode(){
+        val intent = Intent(this, LoginActivityFragment::class.java)
         startActivity(intent)
     }
 
