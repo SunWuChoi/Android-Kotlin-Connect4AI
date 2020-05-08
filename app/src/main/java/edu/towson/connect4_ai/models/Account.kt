@@ -1,4 +1,4 @@
-package edu.towson.connect4_ai
+package edu.towson.connect4_ai.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

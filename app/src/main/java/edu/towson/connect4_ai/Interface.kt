@@ -16,10 +16,10 @@ interface IBoard {
     fun setCurrentPlayer(player: Player)
     fun getBoard(): List<List<Player>>
     fun reset()
-<<<<<<< HEAD
+//<<<<<<< HEAD
 }
-=======
-    fun resetYellow()
-    fun copy(): Board
-}
->>>>>>> origin/login-feature
+//=======
+//    fun resetYellow()
+//    fun copy(): Board
+
+//

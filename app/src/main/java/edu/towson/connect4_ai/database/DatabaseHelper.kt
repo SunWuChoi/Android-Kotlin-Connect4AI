@@ -5,6 +5,13 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+
+
+
+//Not using this anymore. Instead using the accountDatabase and accountDatabaseRepository
+
+
+
 class DatabaseHelper(context: Context): SQLiteOpenHelper(context, dbname, factory, version){
 
     override fun onCreate(p0: SQLiteDatabase?) {
