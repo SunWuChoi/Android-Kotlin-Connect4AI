@@ -1,0 +1,71 @@
+[33mcommit bc3f23dab81bcf6daa5e8d89bc3a30ad0cf35402[m[33m ([m[1;36mHEAD[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Mon Apr 20 16:23:40 2020 -0400
+
+    Silva Version 1.0
+
+[33mcommit a51365c3a27065ba8b3e59e5f2b02c369c0d8e80[m[33m ([m[1;33mtag: Silva_V1.0[m[33m, [m[1;33mtag: Prototype_1[m[33m)[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Sun Mar 8 23:40:57 2020 -0400
+
+    Working Prototype #1
+
+[33mcommit 879f726cab5451a74b7e2b040c94c464b26a0a52[m
+Author: sund0416 <schoi21@students,towson.edu>
+Date:   Sun Mar 8 23:37:34 2020 -0400
+
+    wip
+
+[33mcommit afc4d974d0883ee41733d76402cf4084db1f7cc3[m
+Author: sund0416 <schoi21@students,towson.edu>
+Date:   Mon Mar 2 19:10:09 2020 -0500
+
+    dumb ai
+
+[33mcommit 5496d6f6f19eff731ff7f325a85d2204541562e7[m
+Author: sund0416 <schoi21@students,towson.edu>
+Date:   Mon Mar 2 18:52:55 2020 -0500
+
+    test
+
+[33mcommit 94d49fa27aaa684bb7317be4b41e191d5c581f5a[m
+Author: sund0416 <schoi21@students,towson.edu>
+Date:   Thu Feb 27 20:19:22 2020 -0500
+
+    Silva minimax WIP
+
+[33mcommit ec6a964cd6cd7dbfaab0444d1d5ec5bd13b4b477[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Thu Feb 27 18:41:11 2020 -0500
+
+    Silva ver 0.1
+
+[33mcommit 0e432f1844f2b0889b84e5eae0ac7c92d8bacc0b[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Thu Feb 27 18:20:18 2020 -0500
+
+    added menu
+
+[33mcommit d6831dddfb1812858d252ad79c96b6d444d70673[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Sun Feb 23 03:15:30 2020 -0500
+
+    a complete Connect 4
+
+[33mcommit b18672fcd70a4bcc8ef570f7bc52188d75452a0f[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Sat Feb 22 20:25:25 2020 -0500
+
+    horizontal, vertical win check done
+
+[33mcommit c6f6aa7027fa62178a62b77a426bbba14bd06add[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Sat Feb 22 18:30:55 2020 -0500
+
+    Tic Tac Toe
+
+[33mcommit add6b2f969cec40ca6e4071862f85b21eb5d2bb0[m
+Author: SunWuChoi <schoi21@students.towson.edu>
+Date:   Sat Feb 22 18:26:13 2020 -0500
+
+    empty template
