@@ -1,12 +1,16 @@
 package edu.towson.connect4_ai
 
+import android.content.DialogInterface
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.text.toSpannable
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -182,4 +186,26 @@ class TwoPlayerModeActivity : AppCompatActivity(), View.OnClickListener, IContro
             }
         }
     }
+
+    override fun onBackPressed() {
+        lateinit var dialog:AlertDialog
+        val builder = AlertDialog.Builder(this)
+
+        builder.setMessage("Exit Game?")
+        val dialogClickListener = DialogInterface.OnClickListener{_,which ->
+            when(which){
+                DialogInterface.BUTTON_POSITIVE -> super.onBackPressed()
+            }
+        }
+
+        builder.setPositiveButton("YES", dialogClickListener)
+        builder.setNegativeButton("NO", dialogClickListener)
+
+        dialog = builder.create()
+        dialog.show()
+
+    }
+
+
+
 }

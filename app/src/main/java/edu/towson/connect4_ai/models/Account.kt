@@ -1,5 +1,6 @@
 package edu.towson.connect4_ai.models
 
+import android.graphics.Bitmap
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -11,8 +12,10 @@ data class Account(
     val id: UUID,
     @ColumnInfo(name = "username")
     val username: String,
-    @ColumnInfo(name = "email")
-    val email: String,
     @ColumnInfo(name = "password")
-    val password: String
+    val password: String,
+    @ColumnInfo(name = "victory")
+    var victory: Int,
+    @ColumnInfo(name = "gamesPlayed")
+    var gamesPlayed: Int
 )

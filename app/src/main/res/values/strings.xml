@@ -14,7 +14,7 @@
     <string name="connect_four_ai">Connect Four AI</string>
     <string name="two_player_mode">2 Player mode</string>
     <string name="one_player_mode">Vs AI mode</string>
-    <string name="online_mode">Online mode</string>
+    <string name="leaderboard_mode">Leaderboard</string>
     <string name="created_by">Created by :</string>
     <string name="login_button">Login</string>
     <string name="register_button">Register</string>
@@ -40,5 +40,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="password_confirm">password confirm</string>
 
 </resources>

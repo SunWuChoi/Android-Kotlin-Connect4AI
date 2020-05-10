@@ -8,10 +8,16 @@ import java.util.*
 interface AccountDao{
 
     @Insert
-    fun addAccount(account: Account)
+    suspend fun addAccount(account: Account)
 
-    @Query("select id, username, email, password from Account")
-    fun getAllAccounts(): List<Account>
+    @Update
+    suspend fun updateAccount(account: Account)
+
+    @Delete
+    suspend fun deleteAccount(account: Account)
+
+    @Query("select id, username, password, victory, gamesPlayed from Account")
+    suspend fun getAllAccounts(): List<Account>
 }
 
 //Type Converter

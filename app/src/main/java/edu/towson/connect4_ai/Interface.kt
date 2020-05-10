@@ -16,10 +16,10 @@ interface IBoard {
     fun setCurrentPlayer(player: Player)
     fun getBoard(): List<List<Player>>
     fun reset()
-//<<<<<<< HEAD
+    fun resetYellow()
+    fun copy(): Board
 }
-//=======
-//    fun resetYellow()
-//    fun copy(): Board
 
-//
+
+
+

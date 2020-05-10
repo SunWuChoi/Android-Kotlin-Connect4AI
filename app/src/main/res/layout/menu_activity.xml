@@ -31,12 +31,12 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/onlineMode_btn"
+        android:id="@+id/Leaderboard_btn"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/online_mode"
+        android:text="@string/leaderboard_mode"
         android:textSize="24sp" />
 
     <LinearLayout

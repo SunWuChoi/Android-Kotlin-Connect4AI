@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/loginActivityFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/accountListFragment">
+
 
     <fragment
-        android:id="@+id/loginActivityFragment"
-        android:name="edu.towson.connect4_ai.fragments.LoginActivityFragment"
-        android:label="LoginActivityFragment" >
+        android:id="@+id/accountListFragment"
+        android:name="edu.towson.connect4_ai.fragments.AccountListFragment"
+        android:label="fragment_account_list"
+        tools:layout="@layout/fragment_account_list" >
         <action
-            android:id="@+id/action_loginActivityFragment_to_registrationActivityFragment"
-            app:destination="@id/registrationActivityFragment" />
+            android:id="@+id/action_accountListFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_accountListFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
     </fragment>
+
+
     <fragment
-        android:id="@+id/registrationActivityFragment"
-        android:name="edu.towson.connect4_ai.fragments.RegistrationActivityFragment"
-        android:label="RegistrationActivityFragment" >
+        android:id="@+id/loginFragment"
+        android:name="edu.towson.connect4_ai.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_registrationActivityFragment_to_loginActivityFragment"
-            app:destination="@id/loginActivityFragment" />
+            android:id="@+id/action_loginFragment_to_accountListFragment"
+            app:destination="@id/accountListFragment" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="edu.towson.connect4_ai.fragments.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_accountListFragment"
+            app:destination="@id/accountListFragment" />
+    </fragment>
+
+
 </navigation>
