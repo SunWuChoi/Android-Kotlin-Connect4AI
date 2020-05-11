@@ -60,6 +60,8 @@ class RankingActivity : AppCompatActivity(), IAccountController {
             NotificationManagerCompat.from(this).cancel(CService.NOTIF_ID)
         })
 
+        
+
     }
 
     override fun onBackPressed() {
