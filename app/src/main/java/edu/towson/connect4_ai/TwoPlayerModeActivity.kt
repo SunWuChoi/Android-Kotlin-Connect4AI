@@ -7,11 +7,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.text.toSpannable
+import androidx.lifecycle.observe
 import kotlinx.android.synthetic.main.activity_main.*
 
 class TwoPlayerModeActivity : AppCompatActivity(), View.OnClickListener, IController {
@@ -29,6 +32,12 @@ class TwoPlayerModeActivity : AppCompatActivity(), View.OnClickListener, IContro
 
         // initialize the view with the model
         updateViewWithBoard()
+
+        MessageQueue.Channel.observe(this, { success ->
+            Log.d(MainMenuActivity.TAG, "Received a message : $success")
+            NotificationManagerCompat.from(this).cancel(CService.NOTIF_ID)
+        })
+
     }
 
     override fun onClick(v: View?) {

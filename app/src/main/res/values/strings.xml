@@ -34,9 +34,9 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="sign_up">Sign up here</string>
-    <string name="username_leaderboard">Username: </string>
-    <string name="rank">Rank: </string>
-    <string name="record">Record: </string>
+    <string name="username_leaderboard">Username </string>
+    <string name="ranking">Ranking </string>
+    <string name="Winrate">Win rate </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

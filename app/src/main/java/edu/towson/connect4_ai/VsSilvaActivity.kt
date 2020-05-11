@@ -1,16 +1,20 @@
 package edu.towson.connect4_ai
 
 import android.content.DialogInterface
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.style.ImageSpan
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.text.toSpannable
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.observe
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.concurrent.thread
 
@@ -29,6 +33,12 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
         // initialize the view with the model
         updateViewWithBoard()
+
+
+        MessageQueue.Channel.observe(this, { success ->
+            Log.d(MainMenuActivity.TAG, "Received a message : $success")
+            NotificationManagerCompat.from(this).cancel(CService.NOTIF_ID)
+        })
     }
 
     override fun onClick(v: View?) {
@@ -86,8 +96,10 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
             resetBtn -> {
                 // if the reset button was clicked, reset the board and view
-                board.reset()
-                resetView()
+                //board.reset()
+                //resetView()
+
+                handleExit()
                 false
             }
             else -> false
@@ -102,6 +114,28 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
 
         } else {
             updateViewWithBoard()
+        }
+    }
+
+    fun handleExit(){
+        val intent = Intent()
+        when(board.getWinner()){
+            Winner.RED -> {
+                setResult(20, intent ) // 1 means login success
+                finish()
+            }
+            Winner.YELLOW -> {
+                setResult(10, intent ) // 1 means login success
+                finish()
+            }
+            Winner.TIE -> {
+                setResult(30, intent ) // 1 means login success
+                finish()
+            }
+            Winner.NONE -> {
+                setResult(40, intent ) // NONE means the game is not finished yet
+                finish()
+            }
         }
     }
 
@@ -135,6 +169,7 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
     override fun updateWinView() {
         winnerTextView.visibility = View.VISIBLE
         resetBtn.visibility = View.VISIBLE
+        resetBtn.text = "EXIT"
         currentPlayerTextView.visibility = View.GONE
     }
 

@@ -6,6 +6,7 @@ import edu.towson.connect4_ai.models.Account
 interface IAccountRepository {
     fun getCount(): Int
     fun getAccount(idx: Int): Account
+    fun getSortedList(): List<Account>
     suspend fun getAll(): List<Account>
     suspend fun remove(account: Account)
     suspend fun replace(account: Account)

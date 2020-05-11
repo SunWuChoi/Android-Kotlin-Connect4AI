@@ -8,7 +8,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import com.google.gson.Gson
 import edu.towson.connect4_ai.database.AccountDatabaseRepository
@@ -21,12 +23,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.*
 import kotlin.coroutines.CoroutineContext
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import androidx.fragment.app.Fragment
+
 
 class RankingActivity : AppCompatActivity(), IAccountController {
     override val coroutineContext: CoroutineContext
         get() = lifecycleScope.coroutineContext
 
     override lateinit var accounts: IAccountRepository
+
     lateinit var currentUser: Account
 
     private var loggedIn = false
@@ -34,7 +42,6 @@ class RankingActivity : AppCompatActivity(), IAccountController {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ranking)
-
 
         accounts = AccountDatabaseRepository(this)
 
@@ -44,25 +51,34 @@ class RankingActivity : AppCompatActivity(), IAccountController {
             currentUser = Gson().fromJson<Account>(json, Account::class.java)
             launch {
                 accounts.replace(currentUser)
+                Toast.makeText(this@RankingActivity, "Updated ${currentUser.username}", Toast.LENGTH_SHORT).show()
             }
         }
+
+        MessageQueue.Channel.observe(this, { success ->
+            Log.d(MainMenuActivity.TAG, "Received a message : $success")
+            NotificationManagerCompat.from(this).cancel(CService.NOTIF_ID)
+        })
+
     }
 
-
-
-
     override fun onBackPressed() {
-        val intent = Intent()
 
-        if(loggedIn){
-            intent.putExtra(CURRENT_USER_KEY, Gson().toJson(currentUser) )
-            setResult(1, intent ) // 1 means login success
-            finish()
+        if(findNavController(R.id.nav_host_fragment).currentDestination?.label == "fragment_login" || findNavController(R.id.nav_host_fragment).currentDestination?.label == "fragment_register"){
+            findNavController(R.id.nav_host_fragment).popBackStack()
         } else {
-            setResult(0, intent) // 0 means nothing logged in
-            finish()
+            val intent = Intent()
+
+            if(loggedIn){
+                intent.putExtra(CURRENT_USER_KEY, Gson().toJson(currentUser) )
+                setResult(1, intent ) // 1 means login success
+                finish()
+            } else {
+                setResult(0, intent) // 0 means nothing logged in
+                finish()
+            }
+            super.onBackPressed()
         }
-        super.onBackPressed()
     }
 
 
@@ -143,8 +159,6 @@ class RankingActivity : AppCompatActivity(), IAccountController {
     override fun clearEditingAccount() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
-
 
 
     companion object {

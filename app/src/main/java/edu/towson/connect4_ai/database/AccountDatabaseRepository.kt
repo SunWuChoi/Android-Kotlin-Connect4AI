@@ -1,6 +1,7 @@
 package edu.towson.connect4_ai.database
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Room
 import edu.towson.connect4_ai.interfaces.IAccountRepository
 import edu.towson.connect4_ai.models.Account
@@ -26,6 +27,15 @@ class AccountDatabaseRepository(ctx: Context) : IAccountRepository {
 
     override fun getAccount(idx: Int): Account {
         return accountList.get(idx)
+    }
+
+    override fun getSortedList(): List<Account>{
+        var list: List<Account> = accountList
+        list = list.sortedByDescending {
+            ((it.victory*100.0).div((it.gamesPlayed*100.0))*10000).toInt()
+            //Log.d("sorted by ", ((it.victory*100.0).div((it.gamesPlayed*100.0))*10000).toInt().toString())
+        }
+        return list
     }
 
     override suspend fun getAll(): List<Account> {
