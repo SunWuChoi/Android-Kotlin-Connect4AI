@@ -1,6 +1,5 @@
 package edu.towson.connect4_ai
 
-import android.app.Activity
 import android.content.Intent
 import android.content.res.Configuration
 import android.graphics.Bitmap
@@ -21,12 +20,8 @@ import kotlinx.android.synthetic.main.fragment_account_list.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.*
 import kotlin.coroutines.CoroutineContext
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import androidx.fragment.app.Fragment
+
 
 
 class RankingActivity : AppCompatActivity(), IAccountController {

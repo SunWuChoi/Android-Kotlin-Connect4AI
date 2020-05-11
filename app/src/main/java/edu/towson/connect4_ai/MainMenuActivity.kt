@@ -54,7 +54,7 @@ class MainMenuActivity : AppCompatActivity(), IMenuController {
                 }
 
             } catch (e: Exception){
-                Toast.makeText(this@MainMenuActivity,"Icon error", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@MainMenuActivity,"Icon error", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -117,11 +117,15 @@ class MainMenuActivity : AppCompatActivity(), IMenuController {
                     10 -> { // lose
                         currentUser.gamesPlayed++
                         //Toast.makeText(this, "Lost", Toast.LENGTH_SHORT).show()
+
+                        launchLeaderboardMode()
+
                     }
                     20 -> { // win
                         currentUser.gamesPlayed++
                         currentUser.victory++
                         //Toast.makeText(this, "won", Toast.LENGTH_SHORT).show()
+                        launchLeaderboardMode()
                     }
                     30 -> { // tie
                         currentUser.gamesPlayed++
@@ -129,12 +133,14 @@ class MainMenuActivity : AppCompatActivity(), IMenuController {
 
                         currentUser.gamesPlayed++
                         //Toast.makeText(this, "Tie", Toast.LENGTH_SHORT).show()
+                        launchLeaderboardMode()
                     }
                     40 -> { // game ended without tie or win or lose
                         //nothing happens
                         //Toast.makeText(this, "exited", Toast.LENGTH_SHORT).show()
                     }
                 }
+
             }
         }
 

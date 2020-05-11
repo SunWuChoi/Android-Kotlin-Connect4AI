@@ -1,18 +1,23 @@
 package edu.towson.connect4_ai.fragments
 
 
+import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 
 import edu.towson.connect4_ai.R
+import edu.towson.connect4_ai.RankingActivity
 import edu.towson.connect4_ai.interfaces.IAccountController
 import edu.towson.connect4_ai.models.Account
+import kotlinx.android.synthetic.main.activity_ranking.*
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.coroutines.launch
 import java.lang.Exception
@@ -64,12 +69,14 @@ class RegisterFragment : Fragment() {
         accountController.launch {
             try {
                 val accounts = accountController.accounts.getAll()
-                if(!checkExisting(newAccount.username, accounts)) {
+                if(!checkExisting(newAccount.username, accounts) && newAccount.username != "") {
                     accountController.addNewAccount(newAccount)
                     Toast.makeText(activity,"Created new account: ${newAccount.username}", Toast.LENGTH_LONG).show()
-                    findNavController().popBackStack()
+                    hideKeyboard(activity as RankingActivity)
+                    NavHostFragment.findNavController(nav_host_fragment)
+                        .navigate(R.id.action_registerFragment_to_accountListFragment)
                 } else {
-                    Toast.makeText(activity,"${newAccount.username} already exists!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity,"${newAccount.username} username already exists or empty", Toast.LENGTH_LONG).show()
                 }
             } catch (e: Exception){
 
@@ -85,6 +92,18 @@ class RegisterFragment : Fragment() {
             }
         }
         return false
+    }
+
+    fun hideKeyboard(activity: Activity) {
+        val inputMethodManager =
+            activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+
+        // Check if no view has focus
+        val currentFocusedView = activity.currentFocus
+        currentFocusedView?.let {
+            inputMethodManager.hideSoftInputFromWindow(
+                currentFocusedView.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        }
     }
 
 }

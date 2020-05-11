@@ -49,6 +49,7 @@ class AccountListFragment : Fragment() {
 
         to_register_menu_btn?.setOnClickListener { accountController.launchNewRegistrationScreen() }
         to_login_menu_btn?.setOnClickListener { accountController.launchLoginScreen() }
+
     }
 
     override fun onResume() {

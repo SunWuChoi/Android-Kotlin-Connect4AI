@@ -14,8 +14,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.text.toSpannable
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.observe
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Delay
+import kotlinx.coroutines.launch
 import kotlin.concurrent.thread
 
 class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
@@ -109,8 +112,20 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
             // check for a win and update the view accordingly
             handleWin()
             updateViewWithBoard()
+            gameProgress.visibility = View.VISIBLE
 
-            silvaMove()
+            val t = Thread(Runnable {
+                runOnUiThread(Runnable {
+
+                    silvaMove()
+                    gameProgress.visibility = View.INVISIBLE
+                    handleWin()
+                    updateViewWithBoard()
+                })
+            })
+            t.start()
+
+
 
         } else {
             updateViewWithBoard()
@@ -148,11 +163,11 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
     override fun handleWin() {
         when(board.getWinner()) {
             Winner.RED -> {
-                winnerTextView.text = getString(R.string.x_wins)
+                winnerTextView.text = "Victory !"
                 updateWinView()
             }
             Winner.YELLOW -> {
-                winnerTextView.text = getString(R.string.o_wins)
+                winnerTextView.text = "Defeat !"
                 updateWinView()
             }
             Winner.NONE -> {
@@ -197,8 +212,8 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
                 }
             }
         currentPlayerTextView.text = when(board.getCurrentPlayer().name){
-            "RED" -> "Red's turn"
-            else -> "Yellow's turn"
+            "RED" -> "Your turn"
+            else -> "Calculating"
         }
     }
 
@@ -206,17 +221,19 @@ class VsSilvaActivity : AppCompatActivity(), View.OnClickListener, IController {
         var Silvaplaced = false
                 // move generator
         val copyBoard = board.copy()
+
         // copy board is in yellow player state
 
         //var i = getMove(copyBoard, minimax(1, copyBoard))
         //Silvaplaced = board.fromTop(i)
 
 
-        board.grid = minimax(4, copyBoard).copyGrid()
+        board.grid = minimax(5, copyBoard).copyGrid()
         //board.updateCurrentPlayer()
 
-        handleWin()
-        updateViewWithBoard()
+
+        //handleWin()
+        //updateViewWithBoard()
     }
 
 
